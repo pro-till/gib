@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TILL GIBBREX | Product Batches</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f8f9fa; color: #333; line-height: 1.5; }
+    header { background: #1b5e20; color: white; padding: 14px 30px; }
+    .logo { font-size: 20px; font-weight: 600; }
+    .hero { background: linear-gradient(135deg, #2e7d32, #1b5e20); color: white; text-align: center; padding: 55px 20px 50px; }
+    .hero h1 { font-size: 38px; font-weight: 700; margin-bottom: 10px; }
+    .hero p { font-size: 18px; opacity: 0.95; }
+    .container { max-width: 1000px; margin: 50px auto; padding: 0 20px; }
+    h2 { color: #1b5e20; font-size: 24px; margin-bottom: 30px; text-align: center; }
+    .batch-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+    .batch-card { background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.07); padding: 24px; border: 1px solid #e8f5e9; transition: 0.2s; }
+    .batch-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+    .batch-card h3 { color: #1b5e20; font-size: 20px; margin-bottom: 12px; text-align: center; }
+    .batch-details { font-size: 14.5px; margin-bottom: 18px; }
+    .batch-details p { margin: 6px 0; display: flex; justify-content: space-between; }
+    .batch-details span { font-weight: 600; color: #444; }
+    .batch-card a { display: block; text-align: center; background: #2e7d32; color: white; text-decoration: none; padding: 11px; border-radius: 6px; font-weight: 600; }
+    .batch-card a:hover { background: #1b5e20; }
+    footer { text-align: center; padding: 30px 20px; color: #777; font-size: 13px; border-top: 1px solid #eee; margin-top: 60px; }
+  </style>
+</head>
+<body>
+  <header><div class="logo">Tillage Agrochemicals Pvt Ltd</div></header>
+
+  <section class="hero">
+    <h1>TILL GIBBREX</h1>
+    <p>Gibberellic Acid 0.001% L – Plant Growth Regulator</p>
+  </section>
+
+  <div class="container">
+    <h2>Available Batches</h2>
+    <div class="batch-grid" id="batchGrid"></div>
+  </div>
+
+  <footer>
+    Customer Care: tillageagrochemicals@gmail.com | 9522688855<br>
+    Product information as per Insecticides Act requirements
+  </footer>
+
+  <script src="batches-data.js"></script>
+  <script>
+    const grid = document.getElementById("batchGrid");
+    batches.forEach(batch => {
+      const card = document.createElement("div");
+      card.className = "batch-card";
+      card.innerHTML = `
+        <h3>${batch.batchNo}</h3>
+        <div class="batch-details">
+          <p><span>Pack Size:</span> ${batch.packSize}</p>
+          <p><span>Mfg Date:</span> ${batch.mfgDate}</p>
+          <p><span>Expiry:</span> ${batch.expDate}</p>
+          <p><span>MRP:</span> ${batch.mrp}</p>
+          <p><span>USP:</span> ${batch.usp}</p>
+        </div>
+        <a href="${batch.folderName}/">View Full Details</a>
+      `;
+      grid.appendChild(card);
+    });
+  </script>
+</body>
+</html>

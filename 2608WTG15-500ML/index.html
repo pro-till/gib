@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TILL GIBBREX | Product Information</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f8f9fa; color: #333; line-height: 1.5; }
+    header { background: #1b5e20; color: white; padding: 12px 30px; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 20px; font-weight: 600; }
+    nav a { color: white; text-decoration: none; margin-left: 25px; font-size: 15px; opacity: 0.9; }
+    nav a:hover { opacity: 1; text-decoration: underline; }
+    .hero { background: linear-gradient(135deg, #2e7d32, #1b5e20); color: white; text-align: center; padding: 50px 20px 45px; }
+    .hero h1 { font-size: 36px; font-weight: 700; letter-spacing: 1px; margin-bottom: 10px; }
+    .hero p { font-size: 17px; opacity: 0.95; margin-bottom: 20px; }
+    .batch-badge { display: inline-block; background: #ffc107; color: #333; padding: 8px 20px; border-radius: 50px; font-size: 15px; font-weight: 600; }
+    .container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+    h2 { color: #1b5e20; font-size: 22px; margin-bottom: 18px; font-weight: 600; }
+    .info-card { background: white; border-radius: 12px; box-shadow: 0 3px 15px rgba(0,0,0,0.06); overflow: hidden; margin-bottom: 35px; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { padding: 14px 20px; text-align: left; border-bottom: 1px solid #eee; }
+    th { background: #f1f8e9; width: 38%; font-weight: 600; color: #333; }
+    tr:last-child th, tr:last-child td { border-bottom: none; }
+    .safety-box { background: #fffde7; border: 1px solid #ffecb3; border-radius: 12px; padding: 20px 25px; display: flex; align-items: flex-start; gap: 18px; margin-bottom: 35px; }
+    .safety-box img { width: 58px; height: auto; margin-top: 4px; }
+    .manufacturer-card { background: white; border-radius: 12px; box-shadow: 0 3px 15px rgba(0,0,0,0.06); padding: 25px 30px; margin-bottom: 40px; }
+    .manufacturer-card strong { color: #1b5e20; display: block; margin-bottom: 3px; }
+    .download-section { text-align: center; margin: 40px 0; }
+    .download-btn { display: inline-block; background: #2e7d32; color: white; text-decoration: none; padding: 14px 32px; border-radius: 8px; font-size: 16px; font-weight: 600; }
+    .download-btn:hover { background: #1b5e20; }
+    footer { text-align: center; padding: 25px; color: #777; font-size: 13px; border-top: 1px solid #eee; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Tillage Agrochemicals Pvt Ltd</div>
+    <nav>
+      <a href="#product">Product Details</a>
+      <a href="#safety">Safety</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>TILL GIBBREX <span id="packSizeHero"></span></h1>
+    <p>Gibberellic Acid 0.001% L – Plant Growth Regulator</p>
+    <div class="batch-badge" id="batchBadge"></div>
+  </section>
+
+  <div class="container">
+
+    <h2 id="product">Product Information</h2>
+    <div class="info-card">
+      <table>
+        <tr><th>UID Number</th><td id="uid"></td></tr>
+        <tr><th>Batch Number</th><td id="batchNo"></td></tr>
+        <tr><th>Manufacturing Date</th><td id="mfgDate"></td></tr>
+        <tr><th>Expiry Date</th><td id="expDate"></td></tr>
+        <tr><th>Technical Name</th><td>Gibberellic Acid 0.001% L</td></tr>
+        <tr><th>Registration Number</th><td>CIR-109449/2013-Gibberellic Acid (L) (342)-15</td></tr>
+        <tr><th>Pack Size</th><td id="packSize"></td></tr>
+        <tr><th>MRP</th><td id="mrp"></td></tr>
+        <tr><th>USP</th><td id="usp"></td></tr>
+      </table>
+    </div>
+
+    <h2 id="safety">Safety Information</h2>
+    <div class="safety-box">
+      <!-- Toxicity image from root -->
+      <img src="../toxicity-green.png" alt="Toxicity Symbol CAUTION">
+      <div>
+        <p><strong>Toxicity Symbol: CAUTION</strong></p>
+        <p style="margin-top: 8px;">
+          <strong>Antidote:</strong> No specific antidote is known; treat symptoms medically if accidental ingestion or irritation occurs.
+        </p>
+      </div>
+    </div>
+
+    <h2>Manufacturer & Marketer</h2>
+    <div class="manufacturer-card">
+      <p>
+        <strong>Manufactured By</strong>
+        WESTERN CROPSCIENCE
+      </p>
+      <p style="margin-top: 18px;">
+        <strong>Marketed By</strong>
+        TILLAGE AGRO CHEMICALS PVT LTD
+      </p>
+    </div>
+
+    <div class="download-section">
+      <!-- Leaflet from root -->
+      <a href="../leaflet-GA 0.001.pdf" class="download-btn" target="_blank">
+        Download / View Product Leaflet
+      </a>
+    </div>
+
+  </div>
+
+  <footer id="contact">
+    Customer Care: tillageagrochemicals@gmail.com | 9522688855<br>
+    Product information as per Insecticides Act requirements
+  </footer>
+
+  <script src="../batches-data.js"></script>
+  <script>
+    // Automatically detect current folder and load correct batch
+    const currentFolder = window.location.pathname.split('/').filter(Boolean).pop();
+    const batch = batches.find(b => b.folderName === currentFolder) || batches[0];
+
+    document.getElementById("uid").textContent = batch.uid;
+    document.getElementById("batchNo").textContent = batch.batchNo;
+    document.getElementById("mfgDate").textContent = batch.mfgDate;
+    document.getElementById("expDate").textContent = batch.expDate;
+    document.getElementById("packSize").textContent = batch.packSize;
+    document.getElementById("mrp").textContent = batch.mrp;
+    document.getElementById("usp").textContent = batch.usp;
+
+    document.getElementById("packSizeHero").textContent = batch.packSize;
+    document.getElementById("batchBadge").textContent = 
+      `Batch: ${batch.batchNo} | Expiry: ${batch.expDate}`;
+  </script>
+
+</body>
+</html>
