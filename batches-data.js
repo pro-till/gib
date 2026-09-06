@@ -33,14 +33,4 @@ const batches = [
     usp: "Rs. 1.28/ml",
     folderName: "2608WTG17-250ML"
   },
-  {
-    uid: "20010307001",
-    batchNo: "2608WTG18",
-    packSize: "1 LTR",
-    mfgDate: "25-12-2026",
-    expDate: "24-12-2028",
-    mrp: "Rs. 1200/-",
-    usp: "Rs. 1.20/ml",
-    folderName: "2608WTG18-1LTR"
-  }
-];
+  ];
