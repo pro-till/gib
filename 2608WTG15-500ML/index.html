@@ -5,43 +5,233 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TILL GIBBREX | Product Information</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f8f9fa; color: #333; line-height: 1.5; }
-    header { background: #1b5e20; color: white; padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
-    .logo { font-size: 18px; font-weight: 600; }
-    nav { display: flex; gap: 15px; margin-top: 5px; }
-    nav a { color: white; text-decoration: none; font-size: 14px; opacity: 0.9; }
-    .hero { background: linear-gradient(135deg, #2e7d32, #1b5e20); color: white; text-align: center; padding: 40px 15px 35px; }
-    .hero h1 { font-size: 26px; font-weight: 700; margin-bottom: 8px; }
-    .hero p { font-size: 15px; opacity: 0.95; margin-bottom: 15px; }
-    .batch-badge { display: inline-block; background: #ffc107; color: #333; padding: 7px 16px; border-radius: 50px; font-size: 14px; font-weight: 600; margin: 4px; }
-    .serial-badge { display: inline-block; background: #ffffff; color: #1b5e20; padding: 7px 16px; border-radius: 50px; font-size: 14px; font-weight: 700; margin: 4px; border: 2px solid #ffc107; }
-    .container { max-width: 900px; margin: 30px auto; padding: 0 15px; }
-    h2 { color: #1b5e20; font-size: 20px; margin-bottom: 15px; font-weight: 600; }
-    .info-card { background: white; border-radius: 12px; box-shadow: 0 3px 15px rgba(0,0,0,0.06); overflow: hidden; margin-bottom: 30px; }
-    .table-wrapper { overflow-x: auto; }
-    table { width: 100%; border-collapse: collapse; min-width: 280px; }
-    th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #eee; font-size: 14px; }
-    th { background: #f1f8e9; width: 40%; font-weight: 600; }
-    .safety-box { background: #fffde7; border: 1px solid #ffecb3; border-radius: 12px; padding: 18px; display: flex; align-items: flex-start; gap: 15px; margin-bottom: 30px; }
-    .safety-box img { width: 50px; height: auto; flex-shrink: 0; }
-    .manufacturer-card { background: white; border-radius: 12px; box-shadow: 0 3px 15px rgba(0,0,0,0.06); padding: 20px; margin-bottom: 30px; }
-    .manufacturer-card strong { color: #1b5e20; display: block; margin-bottom: 3px; }
-    .download-section { text-align: center; margin: 30px 0; }
-    .download-btn { display: inline-block; background: #2e7d32; color: white; text-decoration: none; padding: 14px 28px; border-radius: 8px; font-size: 15px; font-weight: 600; width: 100%; max-width: 320px; }
-    footer { text-align: center; padding: 20px 15px; color: #777; font-size: 12px; border-top: 1px solid #eee; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f8f9fa;
+      color: #333;
+      line-height: 1.5;
+    }
 
+    /* Header */
+    header {
+      background: #1b5e20;
+      color: white;
+      padding: 12px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .logo {
+      font-size: 18px;
+      font-weight: 600;
+    }
+    nav {
+      display: flex;
+      gap: 15px;
+      margin-top: 5px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+      opacity: 0.9;
+    }
+    nav a:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #2e7d32, #1b5e20);
+      color: white;
+      text-align: center;
+      padding: 40px 15px 35px;
+    }
+    .hero h1 {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+      word-break: break-word;
+    }
+    .hero p {
+      font-size: 15px;
+      opacity: 0.95;
+      margin-bottom: 18px;
+    }
+    .batch-badge {
+      display: inline-block;
+      background: #ffc107;
+      color: #333;
+      padding: 7px 16px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    /* Main Content */
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 15px;
+    }
+    h2 {
+      color: #1b5e20;
+      font-size: 20px;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    /* Table Card */
+    .info-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.06);
+      overflow: hidden;
+      margin-bottom: 30px;
+    }
+    .table-wrapper {
+      overflow-x: auto; /* Allows horizontal scroll on very small screens */
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 280px;
+    }
+    th, td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+      font-size: 14px;
+    }
+    th {
+      background: #f1f8e9;
+      width: 40%;
+      font-weight: 600;
+      color: #333;
+    }
+    tr:last-child th,
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Safety Box */
+    .safety-box {
+      background: #fffde7;
+      border: 1px solid #ffecb3;
+      border-radius: 12px;
+      padding: 18px;
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+    .safety-box img {
+      width: 50px;
+      height: auto;
+      flex-shrink: 0;
+    }
+    .safety-box p {
+      font-size: 14px;
+    }
+
+    /* Manufacturer */
+    .manufacturer-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.06);
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+    .manufacturer-card strong {
+      color: #1b5e20;
+      display: block;
+      margin-bottom: 3px;
+      font-size: 14px;
+    }
+    .manufacturer-card p {
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    /* Download Button */
+    .download-section {
+      text-align: center;
+      margin: 30px 0;
+    }
+    .download-btn {
+      display: inline-block;
+      background: #2e7d32;
+      color: white;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      width: 100%;
+      max-width: 320px;
+    }
+    .download-btn:hover {
+      background: #1b5e20;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px 15px;
+      color: #777;
+      font-size: 12px;
+      border-top: 1px solid #eee;
+    }
+
+    /* ========== MOBILE RESPONSIVE ========== */
     @media (max-width: 600px) {
-      .hero h1 { font-size: 22px; }
-      .safety-box { flex-direction: column; align-items: center; text-align: center; }
-      nav { width: 100%; justify-content: center; }
+      .hero h1 {
+        font-size: 24px;
+      }
+      .hero p {
+        font-size: 14px;
+      }
+      th, td {
+        padding: 10px 12px;
+        font-size: 13px;
+      }
+      .safety-box {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .safety-box img {
+        margin-bottom: 10px;
+      }
+      nav {
+        width: 100%;
+        justify-content: center;
+        margin-top: 8px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .hero h1 {
+        font-size: 22px;
+      }
+      th {
+        width: 45%;
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="logo">Tillage Agrochemicals Pvt Ltd</div>
+    <div class="logo">Tillage Agro</div>
     <nav>
       <a href="#product">Product Details</a>
       <a href="#safety">Safety</a>
@@ -52,10 +242,7 @@
   <section class="hero">
     <h1>TILL GIBBREX <span id="packSizeHero"></span></h1>
     <p>Gibberellic Acid 0.001% L – Plant Growth Regulator</p>
-    <div>
-      <div class="batch-badge" id="batchBadge"></div>
-      <div class="serial-badge" id="serialBadge" style="display: none;"></div>
-    </div>
+    <div class="batch-badge" id="batchBadge"></div>
   </section>
 
   <div class="container">
@@ -66,7 +253,6 @@
         <table>
           <tr><th>UID Number</th><td id="uid"></td></tr>
           <tr><th>Batch Number</th><td id="batchNo"></td></tr>
-          <tr><th>Serial Number</th><td id="serialNo">—</td></tr>
           <tr><th>Manufacturing Date</th><td id="mfgDate"></td></tr>
           <tr><th>Expiry Date</th><td id="expDate"></td></tr>
           <tr><th>Technical Name</th><td>Gibberellic Acid 0.001% L</td></tr>
@@ -91,12 +277,20 @@
 
     <h2>Manufacturer & Marketer</h2>
     <div class="manufacturer-card">
-      <p><strong>Manufactured By</strong>WESTERN CROPSCIENCE</p>
-      <p style="margin-top: 15px;"><strong>Marketed By</strong>TILLAGE AGRO CHEMICALS PVT LTD</p>
+      <p>
+        <strong>Manufactured By</strong>
+        WESTERN CROPSCIENCE
+      </p>
+      <p style="margin-top: 15px;">
+        <strong>Marketed By</strong>
+        TILLAGE AGRO CHEMICALS PVT LTD
+      </p>
     </div>
 
     <div class="download-section">
-      <a href="../leaflet-GA 0.001.pdf" class="download-btn" target="_blank">Download / View Product Leaflet</a>
+      <a href="../leaflet-GA 0.001.pdf" class="download-btn" target="_blank">
+        Download / View Product Leaflet
+      </a>
     </div>
 
   </div>
@@ -108,15 +302,10 @@
 
   <script src="../batches-data.js"></script>
   <script>
-    // 1. Get current batch from folder name
+    // Automatically detect current folder and load correct batch
     const currentFolder = window.location.pathname.split('/').filter(Boolean).pop();
     const batch = batches.find(b => b.folderName === currentFolder) || batches[0];
 
-    // 2. Get unique Serial Number from URL (?s= or ?id=)
-    const urlParams = new URLSearchParams(window.location.search);
-    const serial = urlParams.get('s') || urlParams.get('id') || urlParams.get('serial') || null;
-
-    // 3. Fill batch data
     document.getElementById("uid").textContent = batch.uid;
     document.getElementById("batchNo").textContent = batch.batchNo;
     document.getElementById("mfgDate").textContent = batch.mfgDate;
@@ -124,15 +313,10 @@
     document.getElementById("packSize").textContent = batch.packSize;
     document.getElementById("mrp").textContent = batch.mrp;
     document.getElementById("usp").textContent = batch.usp;
-    document.getElementById("packSizeHero").textContent = batch.packSize;
-    document.getElementById("batchBadge").textContent = `Batch: ${batch.batchNo} | Expiry: ${batch.expDate}`;
 
-    // 4. Show Serial Number if present
-    if (serial) {
-      document.getElementById("serialNo").textContent = serial;
-      document.getElementById("serialBadge").style.display = "inline-block";
-      document.getElementById("serialBadge").textContent = `Serial: ${serial}`;
-    }
+    document.getElementById("packSizeHero").textContent = batch.packSize;
+    document.getElementById("batchBadge").textContent = 
+      `Batch: ${batch.batchNo} | Expiry: ${batch.expDate}`;
   </script>
 
 </body>
